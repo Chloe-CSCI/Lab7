@@ -22,13 +22,10 @@ jobs:
         dotnet-version: '8.0.x'
 
     - name: Install dependencies
-      working-directory: ./LibraryUnitTest
-      run: dotnet restore
+      run: dotnet restore ./LibraryUnitTest/LibraryUnitTest.sln # Adjust path if necessary
 
     - name: Build solution
-      working-directory: ./LibraryUnitTest
-      run: dotnet build --no-restore
+      run: dotnet build ./LibraryUnitTest/LibraryUnitTest.sln --no-restore # Adjust path if necessary
 
     - name: Run tests
-      working-directory: ./LibraryUnitTest
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet test ./LibraryUnitTest/LibraryUnitTest.sln --no-build --verbosity normal # Adjust path if necessary
