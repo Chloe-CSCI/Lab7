@@ -22,13 +22,13 @@ jobs:
         dotnet-version: '8.0.x'
 
     - name: Install dependencies
-      working-directory: LibraryBlazorApp
+      working-directory: LibraryUnitTest
       run: dotnet restore
 
     - name: Build solution
-      working-directory: LibraryBlazorApp
+      working-directory: LibraryUnitTest
       run: dotnet build --no-restore
 
     - name: Run tests
-      working-directory: LibraryBlazorApp
+      working-directory: LibraryUnitTest
       run: dotnet test --no-build --verbosity normal
