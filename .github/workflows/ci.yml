@@ -19,13 +19,16 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
       with:
-        dotnet-version: '8.0.x' # Ensure this matches your .NET version
+        dotnet-version: '8.0.x'
 
     - name: Install dependencies
+      working-directory: LibraryBlazorApp
       run: dotnet restore
 
     - name: Build solution
+      working-directory: LibraryBlazorApp
       run: dotnet build --no-restore
 
     - name: Run tests
+      working-directory: LibraryBlazorApp
       run: dotnet test --no-build --verbosity normal
